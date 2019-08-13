@@ -6,8 +6,17 @@ export default {
     return axios.get("/view");
   },
   // Gets the jobs with the given id
-  getJob: function(id) {
-    return axios.get("/jobs/" + id);
+  getHire: function(id) {
+    return axios.get("/hire/" + id);
+  },
+  getAllHire: function() {
+    return axios.get("/hire/");
+  },
+  findAllHireWithDetail: function() {
+    return axios.get("/hire/findAllHireWithDetail");
+  },
+  saveHire: function(hireData) {
+    return axios.post("/hire", hireData);
   },
   // Deletes the jobs with the given id
   deleteJobs: function(id) {

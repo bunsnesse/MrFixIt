@@ -14,7 +14,6 @@ const offerSchema = new Schema({
   state: { type: String, required: true },
   date: { type: Date, default: Date.now },
   price:{type: Number,required: true},
-  hired:{type: Boolean,default: false},
 });
 
 const Offer = mongoose.model("Offer", offerSchema);

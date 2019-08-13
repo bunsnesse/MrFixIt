@@ -6,6 +6,8 @@ import Home from "./pages/Home"
 import Post from "./pages/Post"
 import Search from "./pages/Search"
 import View from "./pages/View"
+import Hire from "./pages/Hire"
+
 
 
 const App = () =>
@@ -18,6 +20,7 @@ const App = () =>
         <Route exact path="/jobs" component={Post} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/view" component={View} />
+        <Route exact path="/hire" component={Hire} />
       
         {/* <Route component={NoMatch} /> */}
       </Switch>
