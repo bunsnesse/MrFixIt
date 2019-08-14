@@ -11,9 +11,9 @@ import {withAlert} from 'react-alert';
 class Search extends Component {
   state = {
     yardwork: false,
-    carpentry: false,
-    plumbing: false,
-    electrician: false,
+    handyman: false,
+    cleaning: false,
+    groceries: false,
     jobs: []
   };
 
@@ -43,8 +43,8 @@ class Search extends Component {
         })
       })  
     }
-     if(this.state.carpentry === true){   
-       axios.get("/findCarpenters",)
+     if(this.state.handyman === true){   
+       axios.get("/findHandyman",)
        .then( res => {
          console.log(res)
          this.setState({
@@ -52,16 +52,16 @@ class Search extends Component {
          })
        })
     }
-    if(this.state.plumbing === true ){
-      axios.get("/findPlumbers",)
+    if(this.state.cleaners === true ){
+      axios.get("/findCleaners",)
       .then(res => {
         this.setState({
           jobs: res.data
         })      
       })
     }
-    if(this.state.electrician === true){
-      axios.get("/findElectricians",)
+    if(this.state.groceries === true){
+      axios.get("/findGroceries",)
       .then(res => {
         this.setState({
           jobs: res.data
@@ -72,14 +72,14 @@ class Search extends Component {
 
   jobType(job) {
     var jobTitles = ""
-    if(job.carpentry) {
-      jobTitles += "Carpentry  "
+    if(job.handyman) {
+      jobTitles += "Handyman  "
     }
-    if(job.plumbing) {
-      jobTitles += "Plumbing  "
+    if(job.cleaners) {
+      jobTitles += "Cleaners  "
     }
-    if(job.electrician) {
-      jobTitles += "Electrician  "
+    if(job.groceries) {
+      jobTitles += "Groceries "
     }
     if(job.yardwork) {
       jobTitles += "Yard Work  "
@@ -133,8 +133,8 @@ class Search extends Component {
                         </div>
                         <div className='row'>
                           <label> 
-                            <input type="checkbox" ref="carpentry" name="carpentry" checked={this.state.carpentry} onChange={this.handleInputChange}/>
-                              <span>Carpentry</span>                  
+                            <input type="checkbox" ref="handyman" name="handyman" checked={this.state.handyman} onChange={this.handleInputChange}/>
+                              <span>Handyman</span>                  
                           </label>   
                         </div>
                         <div className='row'>
@@ -145,14 +145,14 @@ class Search extends Component {
                         </div>
                         <div className='row'>
                           <label> 
-                            <input type="checkbox" ref="electrician" name="electrician" checked={this.state.electrician} onChange={this.handleInputChange}/>
-                              <span>Electrician</span>                  
+                            <input type="checkbox" ref="groceries" name="groceries" checked={this.state.groceries} onChange={this.handleInputChange}/>
+                              <span>Grocery Shopper</span>                  
                           </label>   
                         </div>
                         <div className='row'>
                           <label>
-                            <input type="checkbox" ref="plumbing" name="plumbing" checked={this.state.plumbing} onChange={this.handleInputChange}/>
-                              <span>Plumbing</span>
+                            <input type="checkbox" ref="cleaning" name="cleaning" checked={this.state.cleaners} onChange={this.handleInputChange}/>
+                              <span>Cleaning</span>
                           </label>                                           
                         </div>
                    

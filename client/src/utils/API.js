@@ -27,14 +27,14 @@ export default {
     return axios.post("/jobs", jobData);
   },
   // get carpenters
-  getCarpenters: function() {
-    return axios.get("/getCarpenters")
+  getHandyman: function() {
+    return axios.get("/getHandyman")
   },
-  getElectricians: function() {
-    return axios.get("/getElectricians")
+  getGroceries: function() {
+    return axios.get("/getGroceries")
   },
-  getPlumbers: function() {
-    return axios.get("/getPlumbers")
+  getCleaners: function() {
+    return axios.get("/getCleaners")
   },
   getYardworkers: function() {
     return axios.get("/getYardworkers")

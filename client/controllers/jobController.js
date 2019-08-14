@@ -29,9 +29,9 @@ module.exports = {
     //   .then(dbModel => res.json(dbModel))
     //   .catch(err => res.status(422).json(err));
   },
-  findCarpentry: function (req, res) {
+  findHandyman: function (req, res) {
     db.Offer
-      .find({ carpentry: { $ne: false } })
+      .find({ handyman: { $ne: false } })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -43,16 +43,16 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findElectrician: function (req, res) {
+  findGroceries: function (req, res) {
     db.Offer
-      .find({ electrician: { $ne: false } })
+      .find({ groceries: { $ne: false } })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findPlumbing: function (req, res) {
+  findCleaners: function (req, res) {
     db.Offer
-      .find({ plumbing: { $ne: false } })
+      .find({ cleaners: { $ne: false } })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
