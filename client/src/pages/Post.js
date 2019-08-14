@@ -7,9 +7,9 @@ import API from '../utils/API';
 class Post extends Component {
   state = {
     yardwork: false,
-    carpentry: false,
-    plumbing: false,
-    electrician: false,
+    handyman: false,
+    cleaners: false,
+    groceries: false,
     jobDetails: "",
     city: "",
     state: "",
@@ -66,8 +66,8 @@ class Post extends Component {
 
                         <div className='row'>
                           <label> 
-                            <input type="checkbox" ref="carpentry" name="carpentry" checked={this.state.carpentry} onChange={this.handleInputChange}/>
-                              <span>Carpentry</span>                  
+                            <input type="checkbox" ref="handyman" name="handyman" checked={this.state.handyman} onChange={this.handleInputChange}/>
+                              <span>Handyman</span>                  
                           </label>   
                         </div>
                         <div className='row'>
@@ -78,14 +78,14 @@ class Post extends Component {
                         </div>
                         <div className='row'>
                           <label> 
-                            <input type="checkbox" ref="electrician" name="electrician" checked={this.state.electrician} onChange={this.handleInputChange}/>
-                              <span>Electrician</span>                  
+                            <input type="checkbox" ref="groceries" name="groceries" checked={this.state.groceries} onChange={this.handleInputChange}/>
+                              <span>Grocery Shopper</span>                  
                           </label>   
                         </div>
                         <div className='row'>
                           <label>
-                            <input type="checkbox" ref="plumbing" name="plumbing" checked={this.state.plumbing} onChange={this.handleInputChange}/>
-                              <span>Plumbing</span>
+                            <input type="checkbox" ref="cleaners" name="cleaners" checked={this.state.cleaners} onChange={this.handleInputChange}/>
+                              <span>Cleaning</span>
                           </label>                                           
                         </div>
                         <div className='row'>

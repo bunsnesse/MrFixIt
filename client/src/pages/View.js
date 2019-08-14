@@ -18,14 +18,14 @@ class View extends Component {
 
   jobType(job) {
     var jobTitles = ""
-    if (job.carpentry) {
-      jobTitles += "Carpentry  "
+    if (job.handyman) {
+      jobTitles += "Handyman  "
     }
-    if (job.plumbing) {
-      jobTitles += "Plumbing  "
+    if (job.cleaners) {
+      jobTitles += "Cleaners  "
     }
-    if (job.electrician) {
-      jobTitles += "Electrician  "
+    if (job.groceries) {
+      jobTitles += "Groceries "
     }
     if (job.yardwork) {
       jobTitles += "Yard Work  "
