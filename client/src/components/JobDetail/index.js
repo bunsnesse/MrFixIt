@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import moment from 'moment';
 
 export default class extends Component {
+
+    state = {
+        date: ""
+    }
 
     jobType(job) {
         var jobTitles = ""
@@ -21,6 +26,7 @@ export default class extends Component {
 
     render() {
         let job = this.props.job;
+        let usDate = moment(job.jobDate).format("L");
 
         return (
 
@@ -34,9 +40,19 @@ export default class extends Component {
                 <strong>Email:</strong> {job.email}
                 <br />
                 <strong>Price:</strong> {job.price}
+                <br />
+                <strong>Date:</strong>
+                {job.jobDate && <div>{usDate}</div>}
+                {!job.jobDate && <input type="date" name="date"
+                    onChange={(e) => {
+                        let jobDate = e.target.value;
+                        this.setState({jobDate});
+                    }}
+                
+                />}
                 {this.props.handleApply && <div>
                     <button onClick={() => {
-                        this.props.handleApply(job._id)
+                        this.props.handleApply(job._id, this.state.jobDate)
                     }} >Apply</button>
                 </div>}
                 {this.props.handleCancelJob && <div>

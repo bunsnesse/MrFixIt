@@ -1,0 +1,34 @@
+api:
+
+get all jobs: return all jobs - done
+
+hire: - done
+when hire a job, the hire record contains:
+    userWhoHireThisJob // generate by backend
+    offerId
+    date 
+
+get all hires: - done
+return all hires belong to the user who logged in
+
+
+
+
+Login:
+
+
+frontend: uername, password
+send the username and password to backend /api/login
+backend check credential
+    if credential is correct
+        backend return a jwt
+        frontend store the jwt in the localStorage
+    else
+        backend return error
+
+When frontend is making request, it send jwt token along with 
+
+
+
+
+// "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
