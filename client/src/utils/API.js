@@ -1,42 +1,49 @@
 import axios from "axios";
 
+const instance = axios.create({
+  headers: { token: localStorage.getItem("token") }
+});
+
 export default {
+  getUserInfo: function () {
+    return instance.get("/userInfo");
+  },
   // Gets all jobs
-  getJobs: function() {
-    return axios.get("/view");
+  getJobs: function () {
+    return instance.get("/view");
   },
   // Gets the jobs with the given id
-  getHire: function(id) {
-    return axios.get("/hire/" + id);
+  getHire: function (id) {
+    return instance.get("/hire/" + id);
   },
-  getAllHire: function() {
-    return axios.get("/hire/");
+  getAllHire: function () {
+    return instance.get("/hire/");
   },
-  findAllHireWithDetail: function() {
-    return axios.get("/hire/findAllHireWithDetail");
+  findAllHireWithDetail: function () {
+    return instance.get("/hire/findAllHireWithDetail");
   },
-  saveHire: function(hireData) {
-    return axios.post("/hire", hireData);
+  saveHire: function (hireData) {
+    return instance.post("/hire", hireData);
   },
   // Deletes the jobs with the given id
-  deleteJobs: function(id) {
-    return axios.delete("/jobs/" + id);
+  deleteHire: function (id) {
+    return instance.delete("/hire/" + id);
   },
   // Saves a job to the database
-  saveJobs: function(jobData) {
-    return axios.post("/jobs", jobData);
+  saveJobs: function (jobData) {
+    return instance.post("/jobs", jobData);
   },
   // get carpenters
-  getHandyman: function() {
-    return axios.get("/getHandyman")
+  getHandyman: function () {
+    return instance.get("/findHandyman")
   },
-  getGroceries: function() {
-    return axios.get("/getGroceries")
+  getGroceries: function () {
+    return instance.get("/findGroceries")
   },
-  getCleaners: function() {
-    return axios.get("/getCleaners")
+  getCleaners: function () {
+    return instance.get("/findCleaners")
   },
-  getYardworkers: function() {
-    return axios.get("/getYardworkers")
+  getYardworkers: function () {
+    return instance.get("/findYardworkers")
   }
 };

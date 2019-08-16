@@ -5,7 +5,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const routes = require("./client/routes/index");
+const routes = require("./routes/index");
 
 // Configure middleware
 
@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const apiRoutes = require('./client/routes');
+// const apiRoutes = require('./routes');
 
 //app.use('/', apiRoutes);
 //--//////// Ends mongo exercise (Removed the server)

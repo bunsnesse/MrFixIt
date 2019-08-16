@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 import API from "../utils/API";
 import Post from "./Post";
 import JobDetail from '../components/JobDetail';
-import {withAlert} from 'react-alert';
+import { withAlert } from 'react-alert';
 
 class View extends Component {
   state = {
@@ -43,29 +43,23 @@ class View extends Component {
       .catch(err => console.log(err))
   }
 
-  applYForPosition = id => {
-    console.log('THis job is being applied for ' + id);
+  applyForPosition = (id, jobDate) => {
     //We need to hit a route on our express server that modifieds the appropriate ID in our data base and changes hired to true
     var hireData = {
-      offerId: id
+      offerId: id,
+      jobDate
     };
+
     API.saveHire(hireData)
       .then(res => {
-        // res.redirect
-        //console.log(res)
-        //console.log(this.props.history.push("/view"))
-        //this.props.history.push("/view")
-
         this.props.history.push("/hire");
-        this.props.alert.show('Job Hired!', {type: 'success'})
-
+        this.props.alert.show('Job Hired!', { type: 'success' })
+        console.log('THis job is being applied for ' + id);
       })
-      .catch(err => console.log(err))
-    
-
-
-
-
+      .catch(async (err) => {
+        console.log(err);
+        this.props.alert.show("Error! Job cannot be applied on this date.", {type: "error"})
+      })
 
   }
 
@@ -89,10 +83,10 @@ class View extends Component {
                       return (
 
                         <JobDetail
-                          
+                          key={job._id}
                           job={job}
-                          handleApply={(id) => {
-                            this.applYForPosition(id);
+                          handleApply={(id, jobDate) => {
+                            this.applyForPosition(id, jobDate);
                           }}
                         />
                       )

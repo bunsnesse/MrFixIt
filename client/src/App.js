@@ -7,12 +7,13 @@ import Post from "./pages/Post"
 import Search from "./pages/Search"
 import View from "./pages/View"
 import Hire from "./pages/Hire"
-
+import Header from './pages/Header';
 
 
 const App = () =>
   <Router>
     <div>
+      <Header />
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={Signup} />

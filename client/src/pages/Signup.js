@@ -54,7 +54,7 @@ class Signup extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to='/home' username= { this.state.userName }/>
+      return <Redirect to='/' username= { this.state.userName }/>
     }
 
     return (
@@ -101,7 +101,7 @@ class Signup extends Component {
                       </div>
                     </div>
                     <div className='row'>
-                      <button onClick={this.handleClick} type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Login</button>
+                      <button onClick={this.handleClick} type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Register</button>
                     </div>
                   </form>
                 </div>

@@ -3,7 +3,7 @@ import API from '../utils/API';
 import Jumbotron from '../components/Jumbotron';
 import Nav from "../components/Nav";
 import JobDetail from '../components/JobDetail';
-import {withAlert} from 'react-alert';
+import { withAlert } from 'react-alert';
 
 class Hire extends Component {
   state = { allHire: [] }
@@ -24,12 +24,12 @@ class Hire extends Component {
   }
 
   // Method to DELETE a particular job from the database.
-  deleteHire = event => {
-    API.deleteHire(event.target.id)
-      .then(res => this.loadHire())
+  deleteHire = id => {
+    return API.deleteHire(id)
+      .then(res => { })
       .catch(err => console.log(err))
-      
-    };
+
+  };
 
 
   componentDidMount() {
@@ -52,12 +52,6 @@ class Hire extends Component {
           lead="All of your job in one place"
 
         />
-        <Nav
-          jobs={this.state.job}
-          buttonAction={this.deleteJob}
-          buttonType="btn btn-danger mt-2"
-          buttonText="Delete Job"
-        />
         <div>
           {this.state.allHire.map((hire) => {
             //console.log(hire);
@@ -66,12 +60,13 @@ class Hire extends Component {
               key={hire._id}
               job={hire}
               handleCancelJob={async (hireId) => {
-                await fetch("/hire/" + hireId, {method: "DELETE"});
+                // await fetch("/hire/" + hireId, {method: "DELETE"});
+                await this.deleteHire(hireId);
                 this.getAllHire();
-                this.props.alert.show('Job Canceled!', {type: 'success'})
-                
+                this.props.alert.show('Job Canceled!', { type: 'success' })
+
               }}
-          
+
             />
           })}
         </div>
@@ -81,4 +76,4 @@ class Hire extends Component {
   }
 }
 
-export default  withAlert()(Hire);
+export default withAlert()(Hire);

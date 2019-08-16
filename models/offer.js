@@ -10,9 +10,10 @@ const offerSchema = new Schema({
   groceries: { type: Boolean },
   jobDetails: { type: String, required: true },
   city: { type: String, required: true },
-  state: { type: String, required: true },
   email: { type: String, required: true },
-  date: { type: Date, default: Date.now }
+  state: { type: String, required: true },
+  date: { type: Date, default: Date.now },
+  price:{type: Number,required: true},
 });
 
 const Offer = mongoose.model("Offer", offerSchema);
