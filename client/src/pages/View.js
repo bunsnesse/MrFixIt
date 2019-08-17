@@ -49,7 +49,6 @@ class View extends Component {
       offerId: id,
       jobDate
     };
-
     API.saveHire(hireData)
       .then(res => {
         this.props.history.push("/hire");

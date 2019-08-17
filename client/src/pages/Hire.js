@@ -46,12 +46,14 @@ class Hire extends Component {
 
   render() {
     return (
-      <div className="container">
+     
+     <div className="container">
         <Jumbotron
           title="Job"
           lead="All of your job in one place"
-
+          
         />
+        <Nav />
         <div>
           {this.state.allHire.map((hire) => {
             //console.log(hire);
