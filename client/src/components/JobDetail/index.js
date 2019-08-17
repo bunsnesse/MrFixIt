@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import moment from 'moment';
+import { withAlert } from 'react-alert';
 
-export default class extends Component {
+class JobDetail extends Component {
 
     state = {
-        date: ""
+        jobDate: ""
     }
 
     jobType(job) {
@@ -26,7 +27,7 @@ export default class extends Component {
 
     render() {
         let job = this.props.job;
-        let usDate = moment(job.jobDate).format("L");
+        let usDate = moment.utc(job.jobDate).format("MM-DD-YY");
 
         return (
 
@@ -52,7 +53,15 @@ export default class extends Component {
                 />}
                 {this.props.handleApply && <div>
                     <button onClick={() => {
+                        const dateTodayOrInFuture = this.state.jobDate
+                        if(dateTodayOrInFuture){
                         this.props.handleApply(job._id, this.state.jobDate)
+                        }
+                        else {
+                            this.props.alert.show("Please Enter The Date.", {type: "error"})
+                        }
+                        //this.props.alert.show("Error! Job cannot be applied on this date.", {type: "error"})
+                        //To show an error occurred
                     }} >Apply</button>
                 </div>}
                 {this.props.handleCancelJob && <div>
@@ -65,3 +74,5 @@ export default class extends Component {
         );
     }
 }
+
+export default withAlert()(JobDetail);
