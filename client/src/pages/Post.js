@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row} from "../components/Grid";
 import Nav from "../components/Nav";
+import "./Pages.css";
 import API from '../utils/API';
 
 class Post extends Component {
@@ -47,7 +48,7 @@ class Post extends Component {
        <Nav />
           <Col size="md-12">
             <Jumbotron>
-                <h1>UBERHELP!</h1>
+                <h1>HelpGods!</h1>
             </Jumbotron>
 
             <center>   

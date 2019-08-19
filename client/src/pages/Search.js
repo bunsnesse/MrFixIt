@@ -114,7 +114,7 @@ class Search extends Component {
         <Nav />
         <Col size="md-12">
           <Jumbotron>
-            <h1>UBERHELP!</h1>
+            <h1>HelpGods!</h1>
           </Jumbotron>
 
           <center>
