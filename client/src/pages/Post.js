@@ -118,7 +118,7 @@ class Post extends Component {
                         <div className='row'>
                           <div className="input-field col s12">
                             <input id="price" type='number' className='validate'
-                            value={this.state.price} onChange={this.handleInputChange} name='price' placeholder="Price" />
+                            value={this.state.$price} onChange={this.handleInputChange} name='price' placeholder="Price" />
                               <label htmlFor="price">Price</label>
                           </div>
                         </div>
