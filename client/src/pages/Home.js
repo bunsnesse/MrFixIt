@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row} from "../components/Grid";
 import Nav from "../components/Nav";
-
+import "./Pages.css";
 
 class Home extends Component {
   render(){
@@ -11,7 +11,7 @@ class Home extends Component {
         <Nav text={this.props.username} text={this.props.email} />
         <Col size="md-12">
             <Jumbotron>
-              <h1>UBERHELP!</h1>
+              <h1>HelpGods!</h1>
             </Jumbotron>
         </Col>
         <br/>
