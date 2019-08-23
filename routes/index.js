@@ -11,7 +11,7 @@ router.use(userRoutes);
 router.use((req, res, next) => {
     try {
         // check the token
-        // console.log(req.headers.token);
+        console.log(req);
 
         let token = req.headers.token;
         let decoded = jwt.verify(token, "igor");

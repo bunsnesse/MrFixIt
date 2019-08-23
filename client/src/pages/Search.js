@@ -98,10 +98,12 @@ class Search extends Component {
       .then(res => {
         this.props.history.push("/hire");
         this.props.alert.show('Job Hired!', { type: 'success' })
-
+        console.log('THis job is being applied for ' + id);
       })
-      .catch(err => console.log(err))
-
+      .catch(async (err) => {
+        console.log(err);
+        this.props.alert.show("Error! Job cannot be applied on this date.", {type: "error"})
+      })
 
 
 
@@ -114,7 +116,7 @@ class Search extends Component {
         <Nav />
         <Col size="md-12">
           <Jumbotron>
-            <h1>HelpGods!</h1>
+            <h1>UBERHELP!</h1>
           </Jumbotron>
 
           <center>

@@ -55,11 +55,11 @@ class Hire extends Component {
         />
         <Nav />
         <div>
-          {this.state.allHire.map((hire) => {
+          {this.state.allHire.map((hire, i) => {
             //console.log(hire);
 
             return <JobDetail
-              key={hire._id}
+              key={hire._id + i}
               job={hire}
               handleCancelJob={async (hireId) => {
                 // await fetch("/hire/" + hireId, {method: "DELETE"});
