@@ -5,6 +5,7 @@ var jwt = require('jsonwebtoken');
 module.exports = {
   login: async function(req, res) {
     let {email, password} = req.body;
+
     // find the user record with the email
     // if no user found, return 500
     // if user is found, compare the password

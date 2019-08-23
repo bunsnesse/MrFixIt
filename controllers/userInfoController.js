@@ -4,6 +4,7 @@ const db = require("../models");
 module.exports = {
     userInfo: async function (req, res) {
         let id = req.userId;
+        console.log('look here', req.userId);
         let user = await db.User.findById(id);
         let userObj = user.toObject();
         delete userObj.password;
